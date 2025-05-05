@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - GoFlare Kit</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #fff8f4; color: #333; margin: 0; padding: 0; }
+    header { background: #b71c1c; color: white; padding: 30px 20px; text-align: center; }
+    nav { background: #d84315; text-align: center; padding: 10px; }
+    nav a { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; }
+    section { padding: 30px 20px; max-width: 900px; margin: auto; }
+    h2 { color: #d84315; }
+    label { display: block; margin: 10px 0; font-size: 1.1em; }
+    .item-list { margin-bottom: 20px; }
+    .total { font-weight: bold; margin-top: 10px; font-size: 1.2em; }
+    input[type="checkbox"] { margin-right: 10px; }
+    input[type="text"] { padding: 8px; margin-top: 5px; width: 100%; max-width: 300px; }
+    button { background: #ff7043; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px; }
+    .note { font-size: 0.9em; color: #888; margin-top: 5px; }
+    footer { background: #ffe0b2; text-align: center; padding: 15px; font-size: 0.95em; margin-top: 40px; }
+  </style>
+  <script>
+    const items = [
+      { name: "First Aid Kit", price: 14.99 },
+      { name: "Water Packs", price: 9.50 },
+      { name: "N95 Masks", price: 11.99 },
+      { name: "Flashlight + Batteries", price: 6.99 },
+      { name: "Fire Blanket", price: 14.99 },
+      { name: "Solar Battery Bank", price: 15.00 },
+      { name: "Protein Bars", price: 8.49 },
+      { name: "Backpack", price: 12.00 }
+    ];
+
+    function updateTotal() {
+      let total = 0;
+      items.forEach((item, index) => {
+        const cb = document.getElementById(`item-${index}`);
+        if (cb.checked) total += item.price;
+      });
+      document.getElementById('total').innerText = `Total: $${total.toFixed(2)}`;
+    }
+
+    function confirmOrder() {
+      alert("✅ Order Confirmed! Your GoFlare Kit is being prepared and will ship soon.");
+    }
+  </script>
+</head>
+<body onload="updateTotal()">
+  <header>
+    <h1>Checkout – GoFlare Emergency Kit</h1>
+    <p>Customize your kit and review your order</p>
+  </header>
+
+  <nav>
+    <a href="index.html">← Back to Home</a>
+  </nav>
+
+  <section>
+    <h2>Select Items</h2>
+    <div class="item-list" id="item-list"></div>
+    <p class="total" id="total">Total: $0.00</p>
+
+    <h2>Promo Code</h2>
+    <input type="text" placeholder="Enter organization promo code">
+    <p class="note">Use a verified organization code to receive your kit at no cost – limit one per customer.</p>
+
+    <button onclick="confirmOrder()">Place Order</button>
+  </section>
+
+  <script>
+    const listContainer = document.getElementById("item-list");
+    items.forEach((item, index) => {
+      const label = document.createElement("label");
+      label.innerHTML = `<input type='checkbox' id='item-${index}' checked onchange='updateTotal()'> ${item.name} – $${item.price.toFixed(2)}`;
+      listContainer.appendChild(label);
+    });
+  </script>
+
+  <footer>
+    <p>&copy; 2025 GoFlare Kit Project | ADMN 1001 | Prof. Frank Almeida</p>
+  </footer>
+</body>
+</html>
