@@ -2,137 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wildfire Emergency Kit & Safety</title>
+  <title>GoFlare Emergency Kit</title>
   <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #fff8f4; color: #333; display: flex; }
-    main { flex: 1; }
-    header { background: url('data:image/jpeg;base64,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') center/cover no-repeat; color: #fff; padding: 60px 20px; text-align: center; }
-    header h1 { font-size: 2.8rem; background-color: rgba(0, 0, 0, 0.5); display: inline-block; padding: 10px 20px; border-radius: 10px; }
-    nav { background: #ff6f3c; text-align: center; padding: 10px 0; }
-    nav a { color: #fff; margin: 0 20px; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
-    section { padding: 30px 20px; max-width: 1000px; margin: auto; }
-    h2 { color: #d84315; margin-bottom: 10px; }
-    ul { margin-left: 20px; }
-    .kit-item { margin-bottom: 20px; }
-    .kit-item p { margin: 5px 0; }
-    .kit-item button { background: #ff7043; color: #fff; border: none; padding: 5px 10px; cursor: pointer; border-radius: 5px; }
-    .kit-item .fact { display: none; margin-top: 5px; font-style: italic; color: #555; }
-    footer { background: #ffe0b2; text-align: center; padding: 15px; font-size: 0.95em; }
-    .team-box { background: #fff3e0; padding: 15px; border-left: 5px solid #ff7043; margin: 20px 0; border-radius: 5px; }
-    .team-box ul { list-style-type: none; padding-left: 0; }
-    img.responsive { width: 100%; max-width: 900px; height: auto; border-radius: 10px; margin: 20px 0; }
-    aside { width: 280px; background: #fff3e0; padding: 20px; border-left: 2px solid #ff7043; font-size: 0.95em; }
-    aside h3 { color: #e64a19; margin-top: 0; }
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #fff8f4; color: #333; }
+    header { background: #b71c1c; color: white; padding: 40px 20px; text-align: center; }
+    nav { background: #d84315; text-align: center; padding: 12px 0; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+    section { max-width: 900px; margin: auto; padding: 30px 20px; }
+    h2 { color: #d84315; }
+    .button { background: #ff7043; color: white; padding: 12px 25px; border: none; font-size: 1.1rem; border-radius: 6px; cursor: pointer; }
+    footer { background: #ffe0b2; text-align: center; padding: 15px; margin-top: 40px; font-size: 0.95em; }
   </style>
-  <script>
-    function toggleFact(id) {
-      const fact = document.getElementById(id);
-      fact.style.display = fact.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
 </head>
 <body>
+  <header>
+    <h1>GoFlare Emergency Kit</h1>
+    <p>Your ultimate wildfire survival companion</p>
+  </header>
 
-  <main>
-    <header>
-      <h1>Wildfire Emergency Kit & Safety</h1>
-      <p style="background-color: rgba(0,0,0,0.5); display: inline-block; padding: 5px 15px; border-radius: 8px;">Everything you need to know to survive and act fast during a wildfire</p>
-    </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#kit">Kit Details</a>
+    <a href="checkout.html">Order Now</a>
+  </nav>
 
-    <nav>
-      <a href="#wildfires">About Wildfires</a>
-      <a href="#during">What To Do</a>
-      <a href="#kit">The Kit</a>
-      <a href="#team">Our Team</a>
-    </nav>
+  <section id="about">
+    <h2>Why GoFlare?</h2>
+    <p>Wildfires in Southern California are fast, dangerous, and unpredictable. The GoFlare Kit was built to help you react quickly, breathe safely, and stay prepared when disaster strikes.</p>
+  </section>
 
-    <section id="wildfires">
-      <h2>Understanding Wildfires</h2>
-      <img src="https://th.bing.com/th/id/OIP.bhz3yc5QCxYmVwh4u1GFWAHaEV?w=305&h=180&c=7&r=0&o=5&pid=1.7" alt="Palisades Fire" class="responsive">
-      <p>Wildfires are fast-spreading fires fueled by dry vegetation and wind. They can start from natural causes like lightning or human actions like unattended campfires. California experiences thousands of wildfires yearly, leading to evacuations, health risks, and massive damage. Being prepared is not optional.This is a quick map of how fast the Palisades spread, as you see it covered a large area in little to no time. Being prepared is very important. </p>
-    </section>
-
-    <section id="during">
-      <h2>What To Do During a Wildfire</h2>
-      <ul>
-        <li>Evacuate immediately if authorities tell you to.</li>
-        <li>Cover your nose and mouth with an N95 mask.</li>
-        <li>Use fire blankets if you're trapped or near flames.</li>
-        <li>Have a flashlight ready if power goes out.</li>
-        <li>Keep a go-bag packed and near the door.</li>
-      </ul>
-      <img src="https://th.bing.com/th/id/OIP.3AIxNU847hMwUXr64Efq1AHaDb?w=345&h=162&c=7&r=0&o=5&pid=1.7" alt="Fire Help" class="responsive">
-    </section>
-
-    <section id="kit">
-      <h2>Our Wildfire Survival Kit</h2>
-      <p>Our kit is designed to help you survive and act quickly. Click each item to learn why it's essential.</p>
-      <div class="kit-item">
-        <p><strong>First Aid Kit – $14.99</strong> <button onclick="toggleFact('fact1')">Why?</button></p>
-        <p id="fact1" class="fact">Essential for treating burns, cuts, and breathing issues while help is on the way.</p>
-      </div>
-      <div class="kit-item">
-        <p><strong>Water Packs – $9.50</strong> <button onclick="toggleFact('fact2')">Why?</button></p>
-        <p id="fact2" class="fact">Staying hydrated is critical when you're on the move or exposed to smoke.</p>
-      </div>
-      <div class="kit-item">
-        <p><strong>N95 Masks – $11.99</strong> <button onclick="toggleFact('fact3')">Why?</button></p>
-        <p id="fact3" class="fact">Filters out harmful smoke particles and debris from the air.</p>
-      </div>
-      <div class="kit-item">
-        <p><strong>Flashlight + Batteries – $6.99</strong> <button onclick="toggleFact('fact4')">Why?</button></p>
-        <p id="fact4" class="fact">Helpful during power outages or nighttime evacuations.</p>
-      </div>
-      <div class="kit-item">
-        <p><strong>Fire Blanket – $14.99</strong> <button onclick="toggleFact('fact5')">Why?</button></p>
-        <p id="fact5" class="fact">Provides personal protection or helps extinguish small flames.</p>
-      </div>
-      <div class="kit-item">
-        <p><strong>Solar Battery Bank – $15.00</strong> <button onclick="toggleFact('fact6')">Why?</button></p>
-        <p id="fact6" class="fact">Keeps phones and devices charged when there's no electricity.</p>
-      </div>
-      <div class="kit-item">
-        <p><strong>Protein Bars – $8.49</strong> <button onclick="toggleFact('fact7')">Why?</button></p>
-        <p id="fact7" class="fact">Lightweight, non-perishable food to keep your energy up.</p>
-      </div>
-      <div class="kit-item">
-        <p><strong>Backpack – $12.00</strong> <button onclick="toggleFact('fact8')">Why?</button></p>
-        <p id="fact8" class="fact">Carries all your emergency supplies in one go-bag.</p>
-      </div>
-    </section>
-
-    <section id="team">
-      <h2>Our Team</h2>
-      <div class="team-box">
-        <ul>
-          <li>Andy Crespo</li>
-          <li>Carlos Ramirez</li>
-          <li>Chelsea Alvarado</li>
-          <li>Christopher Estrada</li>
-          <li>George De La Cruz</li>
-          <li>Krystal Sanchez</li>
-        </ul>
-      </div>
-      <p style="text-align:center;">Created with heart and teamwork – ADMN 1001 Wildfire Safety Project</p>
-    </section>
-
-    <footer>
-      <p>&copy; 2025 Wildfire Kit Project | Stay safe, stay ready.</p>
-    </footer>
-  </main>
-
-  <aside>
-    <h3>🔥 Emergency Help</h3>
-    <p>If you are in danger, call <strong>911</strong> immediately.</p>
-    <p>Stay informed with updates from <a href="https://fire.ca.gov" target="_blank">Cal Fire</a> or <a href="https://www.readyforwildfire.org" target="_blank">Ready for Wildfire</a>.</p>
-    <h3>📞 Emergency Contact Tips</h3>
+  <section id="kit">
+    <h2>What’s in the Kit?</h2>
     <ul>
-      <li>Keep a family emergency plan</li>
-      <li>Designate a contact person outside your area</li>
-      <li>Share your evacuation location with relatives</li>
+      <li>✅ First Aid Kit</li>
+      <li>✅ Water Packs</li>
+      <li>✅ N95 Masks</li>
+      <li>✅ Flashlight & Batteries</li>
+      <li>✅ Fire Blanket</li>
+      <li>✅ Solar Power Bank</li>
+      <li>✅ Protein Bars</li>
+      <li>✅ GoBag Backpack</li>
     </ul>
-  </aside>
+    <p><a href="checkout.html"><button class="button">Customize & Order</button></a></p>
+  </section>
 
+  <footer>
+    <p>Created by: Andy Crespo, Carlos Ramirez, Chelsea Alvarado, Christopher Estrada, George De La Cruz, Krystal Sanchez</p>
+    <p>Class: ADMN 1001 | Professor: Frank Almeida</p>
+  </footer>
 </body>
 </html>
+
